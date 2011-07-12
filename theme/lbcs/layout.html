@@ -1,0 +1,227 @@
+{#
+    lbcs/layout.html
+    ~~~~~~~~~~~~~~~~~
+
+    Master layout template for Sphinx themes.
+
+    :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+#}
+{%- block doctype -%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{%- endblock %}
+{%- set reldelim1 = reldelim1 is not defined and ' &raquo;' or reldelim1 %}
+{%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
+{%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and
+                         (sidebars != []) %}
+{%- set url_root = pathto('', 1) %}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+
+{%- macro sidebar() %}
+      {%- if render_sidebar %}
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+          {%- block sidebarlogo %}
+          {%- if logo %}
+            <p class="logo"><a href="{{ pathto(master_doc) }}">
+              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+            </a></p>
+          {%- endif %}
+          {%- endblock %}
+          {%- if sidebars != None %}
+            {#- new style sidebar: explicitly include/exclude templates #}
+            {%- for sidebartemplate in sidebars %}
+            {%- include sidebartemplate %}
+            {%- endfor %}
+          {%- else %}
+            {#- old style sidebars: using blocks -- should be deprecated #}
+            {%- block sidebartoc %}
+            {%- include "localtoc.html" %}
+            {%- endblock %}
+            {%- block sidebarrel %}
+            {%- include "relations.html" %}
+            {%- endblock %}
+          {%- endif %}
+        </div>
+      </div>
+      {%- endif %}
+{%- endmacro %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>理化学研究所生命システム研究センター高橋研究室</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="_static/basic.css" type="text/css" /> 
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+<link rel="stylesheet" href="_static/style.css" type="text/css" /> 
+<link rel="stylesheet" href="_static/coin-slider.css" type="text/css" /> 
+<script type="text/javascript"> 
+  var DOCUMENTATION_OPTIONS = {
+    URL_ROOT:    '',
+    VERSION:     '1.0a',
+    COLLAPSE_INDEX: false,
+    FILE_SUFFIX: '.html',
+    HAS_SOURCE:  true
+  };
+</script> 
+<script type="text/javascript" src="_static/jquery.js"></script> 
+<script type="text/javascript" src="_static/underscore.js"></script> 
+<script type="text/javascript" src="_static/doctools.js"></script> 
+<script type="text/javascript" src="_static/cufon-yui.js"></script> 
+<script type="text/javascript" src="_static/cufon-times-700.js"></script> 
+<script type="text/javascript" src="_static/script.js"></script> 
+<script type="text/javascript" src="_static/coin-slider.min.js"></script> 
+<link rel="top" title="Labolatory for biochemical simulation." href="#" /> 
+<link rel="next" title="高橋研究室について" href="research.html" /> 
+</head>
+
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo">
+        <h1 class="site_header1">
+          <a href="#">Labolatory for Biochemical Simulation</a>
+        </h1>
+        <span>生化学シミュレーション研究チーム(高橋研究室)</span>
+      </div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+          <li class="active"><a href="index.html"><span>Home Page</span></a></li>
+          <li><a href="research.html"><span>Research</span></a></li>
+          <li><a href="members.html"><span>Members</span></a></li>
+          <li><a href="news.html"><span>News</span></a></li>
+          <li><a href="software.html"><span>Software</span></a></li>
+        </ul>
+      </div>
+      <div class="clr"></div>
+
+      <div class="slider">
+        <div id="coin-slider">
+          <a href="#">
+            <img src="_static/slide1.jpg" width="960" height="360" alt="" />
+            <span><big>About research 1</big><br />
+              研究についてその1
+            </span>
+          </a>
+          <a href="#">
+            <img src="_static/slide2.jpg" width="960" height="360" alt="" />
+            <span><big>About research 2</big><br />
+              研究についてその2
+            </span>
+          </a>
+          <a href="#">
+            <img src="_static/slide3.jpg" width="960" height="360" alt="" />
+            <span><big>About research 3</big><br />
+              研究についてその3
+            </span>
+          </a>
+        </div><!-- end of coin-slider -->
+        <div class="clr"></div>
+      </div><!-- end of coin-slider -->
+      <div class="clr"></div>
+
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            {% block body %} {% endblock %}
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+
+          <div class="clr"></div>
+        </div>
+      </div> <!-- end of mainbar -->
+      <div class="sidebar">
+        <div class="gadget">
+            <!--          <h3><a href="#">Table Of Contents</a></h3> -->
+
+<!--
+  {%- block sidebar2 %}{{ sidebar() }}{% endblock %}
+  -->
+
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Sponsors</span></h2>
+          <div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="http://www.dreamtemplate.com/">DreamTemplate</a><br />
+              Over 6,000+ Premium Web Templates</li>
+            <li><a href="http://www.templatesold.com/">TemplateSOLD</a><br />
+              Premium WordPress &amp; Joomla Themes</li>
+            <li><a href="http://www.imhosted.com/">ImHosted.com</a><br />
+              Affordable Web Hosting Provider</li>
+            <li><a href="http://www.megastockphotos.com/">MegaStockPhotos</a><br />
+              Unlimited Amazing Stock Photos</li>
+            <li><a href="http://www.evrsoft.com/">Evrsoft</a><br />
+              Website Builder Software &amp; Tools</li>
+            <li><a href="http://www.csshub.com/">CSS Hub</a><br />
+              Premium CSS Templates</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image</span> Gallery</h2>
+
+        <a href="#"><img src="_static/images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="_static/images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="_static/images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="_static/images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="_static/images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="_static/images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a> </div>
+      <div class="col c2">
+        <h2><span>Related</span> Links</h2>
+        <ul class="fbg_ul">
+          <li><a href="http://www.fbs.osaka-u.ac.jp/labs/yanagida/teamSBC/index.html">細胞シグナル動態研究 上田グループ</a></li>
+          <li><a href="http://www.e-cell.org/">E-Cell Project</a></li>
+          <li><a href="http://dev.e-cell.org/">E-Cell System developer resources</a></li>
+        </ul>
+      </div>
+      <div class="col c3">
+        <h2><span>Contact</span> Us</h2>
+        <p>私たちの研究に関するお問い合わせは下記までご連絡下さい。</p>
+        <dl class="contact_info">
+          <dt>所在地:</dt>
+          <dd><span>大阪府吹田市古江台6-2-3<br />大阪大学バイオ関連多目的研究施設(OLABB)内</span></dd>
+          <dt>Tel:</dt>
+          <dd>070-6800-3903</dd>
+          <dt>Fax:</dt><dd>06-6155-0112</dd>
+          <dt>E-mail:</dt><dd><a href="#">ktakahashi@riken.jp</a></dd>
+        </dl>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">
+        Copyright&nbsp;&copy; 2011, Takahashi Laboratory, All rights reserved.
+      </p>
+      <p class="rf">
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
+      </p>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
