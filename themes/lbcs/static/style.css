@@ -12,7 +12,7 @@ html, .main {
 	margin:0;
 }
 .main {
-	background:#ededed url(../images/main_bg.gif) repeat-x left top;
+	background:#ededed url(main_bg.gif) repeat-x left top;
 }
 .clr {
 	clear:both;
@@ -154,7 +154,7 @@ h1 small {
 	text-decoration:none;
 	color:#fff;
 	font-weight:bold;
-	background:url(../images/menu_a.gif) repeat-x left top;
+	background:url(menu_a.gif) repeat-x left top;
 }
 .content {
 	padding:0;
@@ -175,7 +175,7 @@ h1 small {
 	margin-bottom:0;
 	font-size:30px;
 	line-height:1.2em;
-	background:url(../images/dot.gif) repeat-x left bottom;
+	background:url(dot.gif) repeat-x left bottom;
 }
 .content .mainbar div.img {
 	padding:12px 0 0;
@@ -210,7 +210,7 @@ h1 small {
 	padding:0 20px 24px;
 }
 .content .sidebar h2 {
-	background:url(../images/dot.gif) repeat-x left bottom;
+	background:url(dot.gif) repeat-x left bottom;
 }
 div.gadget ul {
 	margin:0;
@@ -276,7 +276,7 @@ p.infopost a.com span {
 	color:#fff;
 	text-decoration:none;
 	text-align:right;
-	background:url(../images/readmore.gif) repeat-x left top;
+	background:url(readmore.gif) repeat-x left top;
 }
 .content .mainbar .post_content a.rm:hover {
 	text-decoration:underline;
@@ -287,7 +287,7 @@ p.infopost a.com span {
 	font-size:11px;
 	color:#929292;
 	text-align:left;
-	background:url(../images/dot.gif) repeat-x left top;
+	background:url(dot.gif) repeat-x left top;
 }
 .content p.pages span, .content p.pages a {
 	padding:8px 12px;
@@ -366,7 +366,7 @@ p.infopost a.com span {
 	padding:2px 0 2px 12px;
 	color:#6e6e6e;
 	text-decoration:none;
-	background:url(../images/li.gif) no-repeat left center;
+	background:url(li.gif) no-repeat left center;
 }
 .fbg .fbg_ul li a:hover {
 	color:#FF8000;
@@ -433,7 +433,7 @@ ol li .send {
 	margin:0;
 	padding:0;
 	float:left;
-	background:url(../images/search_bg.gif) no-repeat left top;
+	background:url(search_bg.gif) no-repeat left top;
 }
 #formsearch input.editbox_search {
 	margin:0;
