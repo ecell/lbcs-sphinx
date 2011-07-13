@@ -16,7 +16,5 @@ QBiC生化学シミュレーション研究チーム
 .. toctree::
    :maxdepth: 2
 
-   intro
-   tutorial
-
-
+   research
+   members
